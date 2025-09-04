@@ -1,5 +1,5 @@
 const dados = require("../data/games_data");
-
+/*
 function encontrarJogoPorTitulo(titulo) {
   if (encontrarJogoPorTitulo === null) {
     return undefined;
@@ -29,3 +29,22 @@ function jogoDisponivelParaPC(titulo) {
 }
 
 console.log(jogoDisponivelParaPC("Portal 2"));
+
+*/
+
+function obterTitulosDeJogos() {
+  return dados.jogos.map((jogos) => jogos.titulo);
+}
+console.log(obterTitulosDeJogos());
+
+function formatarListaDeJogos() {
+  return dados.jogos.map((jogo) => ` ${jogo.titulo},  (${jogo.anoLancamento})`);
+}
+
+console.log(formatarListaDeJogos());
+
+function listarJogosComNota() {
+  return dados.jogos.map((jogo) => ` ${jogo.titulo},  nota: (${jogo.nota})`);
+}
+
+console.log(listarJogosComNota());
