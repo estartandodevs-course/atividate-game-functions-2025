@@ -47,4 +47,19 @@ function contarJogosPorEstudio() {
   }, {});
 }
 
-console.log(contarJogosPorEstudio());
+function ordenarJogosPorAno(ordem) {
+  return dados.jogos.slice().sort((a, b) => {
+    if (ordem === "ASC") {
+      return a.anoLancamento - b.anoLancamento;
+    } else if (ordem === "DESC") {
+      return b.anoLancamento - a.anoLancamento;
+    } else {
+      throw new error("Por favor digite 'ASC' ou 'DESC'! ");
+    }
+  });
+}
+/*
+console.log(
+  ordenarJogosPorAno("ASC").map((mod) => `${mod.titulo} (${mod.anoLancamento})`)
+);
+*/
