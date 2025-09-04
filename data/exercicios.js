@@ -1,5 +1,5 @@
 const dados = require("../data/games_data");
-/*
+
 function encontrarJogoPorTitulo(titulo) {
   if (encontrarJogoPorTitulo === null) {
     return undefined;
@@ -7,13 +7,9 @@ function encontrarJogoPorTitulo(titulo) {
   return dados.jogos.find((dados) => dados.titulo === titulo);
 }
 
-console.log(encontrarJogoPorTitulo("Chrono Trigger"));
-
 function filtrarJogosPorGenero(idGenero) {
   return dados.jogos.filter((jogos) => jogos.idsGeneros.includes(idGenero));
 }
-
-console.log(filtrarJogosPorGenero("0938aa23-f153-4937-9f88-4858b24d6bce"));
 
 function filtrarJogosMultiplayer() {
   return dados.jogos
@@ -21,30 +17,34 @@ function filtrarJogosMultiplayer() {
     .map((jogo) => jogo.titulo);
 }
 
-console.log(filtrarJogosMultiplayer());
-
 function jogoDisponivelParaPC(titulo) {
   const jogo = dados.jogos.find((jogo) => jogo.titulo === titulo);
   return jogo ? jogo.plataformas.includes("PC") : false;
 }
 
-console.log(jogoDisponivelParaPC("Portal 2"));
-
-*/
-
 function obterTitulosDeJogos() {
   return dados.jogos.map((jogos) => jogos.titulo);
 }
-console.log(obterTitulosDeJogos());
 
 function formatarListaDeJogos() {
   return dados.jogos.map((jogo) => ` ${jogo.titulo},  (${jogo.anoLancamento})`);
 }
 
-console.log(formatarListaDeJogos());
-
 function listarJogosComNota() {
   return dados.jogos.map((jogo) => ` ${jogo.titulo},  nota: (${jogo.nota})`);
 }
 
-console.log(listarJogosComNota());
+function calcularMediaMetacritic() {
+  const total = dados.jogos.reduce((soma, jogo) => soma + jogo.nota, 0);
+  const media = total / dados.jogos.length;
+  return media;
+}
+
+function contarJogosPorEstudio() {
+  return dados.estudios.reduce((contador, estudio) => {
+    contador[estudio.nome] = estudio.jogosFamosos.length;
+    return contador;
+  }, {});
+}
+
+console.log(contarJogosPorEstudio());
