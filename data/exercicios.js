@@ -69,5 +69,16 @@ function ordenarJogosPorNota() {
     return b.nota - a.nota;
   });
 }
-
+/*
 console.log(ordenarJogosPorNota().map((mod) => `${mod.titulo} (${mod.nota})`));
+*/
+
+function exibirPlataformas() {
+  return dados.jogos.forEach((jogo) => {
+    console.log(
+      `O jogo ${jogo.titulo} está disponível para: ${jogo.plataformas}`
+    );
+  });
+}
+
+console.log(exibirPlataformas());
