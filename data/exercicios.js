@@ -81,4 +81,10 @@ function exibirPlataformas() {
   });
 }
 
-console.log(exibirPlataformas());
+function removerJogoPorTitulo(titulo) {
+  const nomeJogo = dados.jogos.findIndex((jogo) => jogo.titulo === titulo);
+
+  dados.jogos.splice(nomeJogo, 1);
+
+  return dados.jogos;
+}
