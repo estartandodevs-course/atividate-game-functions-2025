@@ -63,3 +63,11 @@ console.log(
   ordenarJogosPorAno("ASC").map((mod) => `${mod.titulo} (${mod.anoLancamento})`)
 );
 */
+
+function ordenarJogosPorNota() {
+  return dados.jogos.slice().sort((a, b) => {
+    return b.nota - a.nota;
+  });
+}
+
+console.log(ordenarJogosPorNota().map((mod) => `${mod.titulo} (${mod.nota})`));
