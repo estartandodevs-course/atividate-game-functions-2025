@@ -1,4 +1,3 @@
-
 const dados = require("../data/games_data");
 
 function obterTitulosDeJogos() {
