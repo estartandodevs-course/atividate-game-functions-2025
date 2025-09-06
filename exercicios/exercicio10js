@@ -1,0 +1,17 @@
+const dados = require("../data/games_data");
+
+function ordenarJogosPorAno(ordem) {
+    const jogosOrdenados = dados.jogos.slice(); 
+    if (ordem === 'ASC') {
+        jogosOrdenados.sort((a, b) => a.anoLancamento - b.anoLancamento);
+    }
+    else if (ordem === 'DESC') {
+        jogosOrdenados.sort((a, b) => b.anoLancamento - a.anoLancamento);
+    }
+    return jogosOrdenados;
+}
+
+const jogosOrdenadosAsc = ordenarJogosPorAno('ASC');
+console.log("Jogos ordenados do mais antigo para o mais novo:", jogosOrdenadosAsc);
+const jogosOrdenadosDesc = ordenarJogosPorAno('DESC');
+console.log("Jogos ordenados do mais novo para o mais antigo:", jogosOrdenadosDesc);
