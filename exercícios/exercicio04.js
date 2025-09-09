@@ -1,7 +1,7 @@
 const dados = require('../data/data.js');
 
 const jogoDisponivelParaPC = (titulo) => {
-  const jogo = dados.jogos.find((jogo) => jogo.titulo === titulo)
+  const jogo = dados.jogos.find((jogo) => jogo.titulo === titulo);
   if (jogo.plataformas.includes("PC")) {
     return true;
   } else {

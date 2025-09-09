@@ -1,4 +1,4 @@
-const dados = require('../data/data.js');
+const dados = require('../data/games_data.js');
 
 const formatarListaDeJogos = () => {
   const jogos = dados.jogos.map((jogo) => `${jogo.titulo} (${jogo.anoLancamento})`);

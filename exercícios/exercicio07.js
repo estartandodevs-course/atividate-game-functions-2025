@@ -1,4 +1,4 @@
-const dados = require('../data/data.js');
+const dados = require('../data/games_data.js');
 
 const listarJogosComNota = () => {
   const listaDeJogos = dados.jogos.map((jogo) =>
